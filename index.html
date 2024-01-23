@@ -3,9 +3,511 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Mountain Travel</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style-type: none;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .mainpage {
+      background-image: url(main.jpg);
+      min-height: 100vh;
+    }
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 35px 100px 0;
+      background-color: #80a3db;
+    }
+
+    a {
+      color: white;
+    }
+
+    header > nav {
+      display: flex;
+    }
+
+    header > nav > li {
+      margin: 0 15px;
+    }
+
+    .mainpage-content-area {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: 150px;
+      color: white;
+    }
+    .mainpage-content-area > h1 {
+      font-size: 60px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .mainpage-content-area > h3 {
+      font-size: 25px;
+      margin-bottom: 40px;
+    }
+
+    .buttton {
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+      background-color: #3f51b5;
+      padding: 20px 80px;
+    }
+
+    /* Some Of Our Destinations*/
+
+    .SomeOfOurDestinations {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 80px;
+      color: black;
+    }
+
+    hr {
+      width: 250px;
+      height: 3px;
+      background-color: #3f51b5;
+      border: 0;
+      margin-bottom: 50px;
+    }
+
+    .grid {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .SomeOfOurDestinations > ul > li {
+      height: 350px;
+      padding: 20px;
+      background-clip: content-box;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .SomeOfOurDestinations > p {
+      max-width: 775px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .small {
+      flex-basis: 30%;
+    }
+
+    .large {
+      flex-basis: 70%;
+    }
+
+    /* Tour Packages */
+    .TourPackages {
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 80px;
+      color: black;
+    }
+
+    .TourPackages > p {
+      line-height: 2;
+      max-width: 775px;
+      text-align: center;
+    }
+    .TourPackages > h3 {
+      font-size: 2rem;
+    }
+    .TourPackages > ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .TourPackages > ul > li > h4 {
+      text-align: center;
+      font-size: 30px;
+    }
+    .TourPackages > ul > li > p {
+      max-width: 775px;
+      line-height: 2;
+      text-align: center;
+    }
+
+    .guided-trips {
+      padding-left: 40%;
+    }
+
+    .photo-trips {
+      padding-left: 35%;
+    }
+
+    .biking-trips {
+      padding-left: 35%;
+    }
+
+    .racing-trips {
+      padding-left: 35%;
+    }
+
+    /* Testimonials From Our Adventurers */
+    .TestimonialsFromOurAdventurers {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 80px;
+    }
+
+    .TestimonialsFromOurAdventurers > h3 {
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .TestimonialsFromOurAdventurers.quote {
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 1.5;
+      margin: 40px 0 25px;
+    }
+
+    .TestimonialsFromOurAdventurers > p {
+      max-width: 775px;
+      line-height: 2;
+      padding: 0 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /*  Learn Mores */
+    .LearnMore {
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 80px;
+    }
+    .LearnMore > h1 {
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 32px;
+    }
+    .LearnMore > p {
+      max-width: 775px;
+      line-height: 2;
+      padding: 0 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .LearnMore > form > input {
+      padding: 15px;
+      margin-right: 30px;
+      font-size: 18px;
+      color: #555;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+
+    /* footer */
+    .footer {
+      display: flex;
+      justify-content: space-around;
+      background-color: #607d8b;
+      padding: 20px;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .footer > p {
+      padding-right: 50px;
+    }
+    .footer > ul {
+      display: flex;
+      justify-content: center;
+    }
+    .footer-logo {
+      width: 30px;
+    }
+
+    .footer > ul > li {
+      padding-left: 20px;
+    }
+
+    /* Media Query  480px*/
+    @media (max-width: 480px) {
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style-type: none;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .mainpage {
+        background-image: url(main.jpg);
+        min-height: 100vh;
+      }
+      header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #80a3db;
+      }
+
+      .logo {
+        align-items: center;
+        font-size: 15.7px;
+      }
+
+      a {
+        color: white;
+      }
+
+      header > nav {
+        display: flex;
+      }
+
+      header > nav > li {
+        padding-top: 15.5px;
+        font-size: 1%px;
+      }
+
+      .mainpage-content-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: white;
+      }
+
+      .mainpage-content-area > h1 {
+        font-size: 29px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .mainpage-content-area > h3 {
+        font-size: 13.5px;
+      }
+
+      .buttton {
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        background-color: #3f51b5;
+        padding: 10px 40px;
+      }
+
+      /* Some Of Our Destinations*/
+
+      .SomeOfOurDestinations {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+      }
+      .SomeOfOurDestinations > h1 {
+        text-align: center;
+        font-size: 25px;
+      }
+      .SomeOfOurDestinations > p {
+        text-align: center;
+        max-width: 775px;
+        padding-bottom: 20px;
+      }
+
+      hr {
+        width: 220px;
+        height: 3px;
+        background-color: #3f51b5;
+        border: 0;
+      }
+
+      .grid {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .small {
+        flex-basis: 100%;
+      }
+
+      .large {
+        flex-basis: 100%;
+      }
+
+      /* Tour Packages */
+      .TourPackages {
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+      }
+
+      .TourPackages > hr {
+        margin-top: 20px;
+      }
+
+      .TourPackages > p {
+        line-height: 2;
+        max-width: 775px;
+        text-align: center;
+      }
+      .TourPackages > h3 {
+        font-size: 22.5px;
+        margin-bottom: 20px;
+      }
+      .TourPackages > ul {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .TourPackages > ul > li > h4 {
+        text-align: center;
+        font-size: 20px;
+      }
+      .TourPackages > ul > li > p {
+        max-width: 775px;
+        line-height: 2;
+        text-align: center;
+        font-size: 15px;
+        margin: 60px;
+      }
+
+      .guided-trips {
+        padding-left: 110px;
+      }
+
+      .photo-trips {
+        padding-left: 89px;
+      }
+
+      .biking-trips {
+        padding-left: 85px;
+      }
+
+      .racing-trips {
+        padding-left: 55%;
+      }
+
+      /* Testimonials From Our Adventurers */
+      .TestimonialsFromOurAdventurers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 80px;
+      }
+
+      .TestimonialsFromOurAdventurers > h3 {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 1.4rem;
+      }
+
+      .TestimonialsFromOurAdventurers.quote {
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+      .TestimonialsFromOurAdventurers > p {
+        line-height: 1.5;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      /*  Learn Mores */
+
+      .LearnMore {
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 80px;
+      }
+      .LearnMore > h1 {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 28px;
+      }
+      .LearnMore > p {
+        max-width: 775px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .LearnMore > form > input {
+        padding: 8px;
+        margin-right: 18px;
+        margin-left: 30px;
+        font-size: 18px;
+        color: #555;
+        flex: 1;
+        margin-bottom: 30px;
+      }
+
+      .LearnMore > form > a {
+        font-size: 0.88rem;
+        margin: 46px;
+        padding: 15px 40px;
+      }
+
+      /* footer */
+      .footer {
+        display: flex;
+        justify-content: space-around;
+        background-color: #607d8b;
+        padding: 20px;
+        justify-content: center;
+        font-size: 14px;
+        flex-direction: column;
+      }
+
+      .footer > p {
+        padding-left: 40px;
+        text-align: center;
+        font-size: 13px;
+      }
+      .footer > ul {
+        display: flex;
+        justify-content: center;
+        padding-right: 40px;
+        padding-top: 15px;
+      }
+
+      .footer-logo {
+        width: 30px;
+      }
+    }
+
+    /* Media Query  768px*/
+    @media (min-width: 481px) and (max-width: 768px) {
       * {
         padding: 0;
         margin: 0;
@@ -50,13 +552,13 @@
         color: white;
       }
       .mainpage-content-area > h1 {
-        font-size: 60px;
+        font-size: 55px;
         text-align: center;
         margin-bottom: 20px;
       }
 
       .mainpage-content-area > h3 {
-        font-size: 25px;
+        font-size: 30px;
         margin-bottom: 40px;
       }
 
@@ -106,14 +608,265 @@
         max-width: 775px;
         padding-top: 20px;
         padding-bottom: 20px;
+        text-align: center;
       }
 
       .small {
-        flex-basis: 30%;
+        flex-basis: 50%;
       }
 
       .large {
-        flex-basis: 70%;
+        flex-basis: 50%;
+      }
+
+      /* Tour Packages */
+      .TourPackages {
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 80px;
+        color: black;
+      }
+
+      .TourPackages > p {
+        line-height: 2;
+        max-width: 775px;
+        text-align: center;
+      }
+      .TourPackages > h3 {
+        font-size: 2rem;
+      }
+      .TourPackages > ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .TourPackages > ul > li > h4 {
+        text-align: center;
+        font-size: 30px;
+      }
+      .TourPackages > ul > li > p {
+        max-width: 775px;
+        line-height: 2;
+        text-align: center;
+        padding-bottom: 5px;
+      }
+
+      .guided-trips {
+        padding-left: 35%;
+      }
+
+      .photo-trips {
+        padding-left: 23%;
+      }
+
+      .biking-trips {
+        padding-left: 23%;
+      }
+
+      .racing-trips {
+        padding-left: 23%;
+      }
+
+      /* Testimonials From Our Adventurers */
+      .TestimonialsFromOurAdventurers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 80px;
+      }
+
+      .TestimonialsFromOurAdventurers > h3 {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 1.8rem;
+      }
+
+      .TestimonialsFromOurAdventurers.quote {
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 1.5;
+        margin: 40px 0 25px;
+      }
+
+      .TestimonialsFromOurAdventurers > p {
+        max-width: 775px;
+        line-height: 2;
+        padding: 0 20px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      /*  Learn Mores */
+      .LearnMore {
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 80px;
+      }
+      .LearnMore > h1 {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 32px;
+      }
+      .LearnMore > p {
+        max-width: 775px;
+        line-height: 2;
+        padding: 0 20px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .LearnMore > form > input {
+        padding: 15px;
+        margin-right: 30px;
+        font-size: 18px;
+        color: #555;
+        flex: 1;
+        margin-bottom: 20px;
+      }
+
+      /* footer */
+      .footer {
+        display: flex;
+        justify-content: space-around;
+        background-color: #607d8b;
+        padding: 20px;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      .footer > p {
+        padding-right: 30px;
+      }
+      .footer > ul {
+        display: flex;
+        justify-content: center;
+      }
+      .footer-logo {
+        width: 30px;
+      }
+
+      .footer > ul > li {
+        padding-left: 20px;
+      }
+    }
+
+    /* Media Query  1024px*/
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style-type: none;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .mainpage {
+        background-image: url(main.jpg);
+        min-height: 90vh;
+      }
+      header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 35px 100px 0;
+        background-color: #80a3db;
+      }
+
+      a {
+        color: white;
+      }
+
+      header > nav {
+        display: flex;
+      }
+
+      header > nav > li {
+        margin: 0 15px;
+      }
+
+      .mainpage-content-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 150px;
+        color: white;
+      }
+      .mainpage-content-area > h1 {
+        font-size: 70px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .mainpage-content-area > h3 {
+        font-size: 40px;
+        margin-bottom: 40px;
+      }
+
+      .buttton {
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        background-color: #3f51b5;
+        padding: 30px 100px;
+      }
+
+      /* Some Of Our Destinations*/
+
+      .SomeOfOurDestinations {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 80px;
+        color: black;
+      }
+
+      hr {
+        width: 250px;
+        height: 3px;
+        background-color: #3f51b5;
+        border: 0;
+        margin-bottom: 50px;
+      }
+
+      .grid {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .SomeOfOurDestinations > ul > li {
+        height: 350px;
+        padding: 20px;
+        background-clip: content-box;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .SomeOfOurDestinations > p {
+        max-width: 775px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .small {
+        flex-basis: 50%;
+      }
+
+      .large {
+        flex-basis: 50%;
       }
 
       /* Tour Packages */
@@ -152,19 +905,19 @@
       }
 
       .guided-trips {
-        padding-left: 208px;
+        padding-left: 40%;
       }
 
       .photo-trips {
-        padding-left: 190px;
+        padding-left: 35%;
       }
 
       .biking-trips {
-        padding-left: 182px;
+        padding-left: 35%;
       }
 
       .racing-trips {
-        padding-left: 182px;
+        padding-left: 35%;
       }
 
       /* Testimonials From Our Adventurers */
@@ -237,6 +990,7 @@
 
       .footer > p {
         padding-right: 50px;
+        text-align: center;
       }
       .footer > ul {
         display: flex;
@@ -247,267 +1001,260 @@
       }
 
       .footer > ul > li {
-        padding-left: 20px;
+        padding-right: 30px;
+      }
+    }
+
+    /* Media Query  1200px*/
+
+    @media (min-width: 1025px) and (max-width: 1200px) {
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style-type: none;
+        font-family: "Open Sans", sans-serif;
       }
 
-      /* Media Query */
-      @media (max-width: 480px) {
-        * {
-          padding: 0;
-          margin: 0;
-          box-sizing: border-box;
-          text-decoration: none;
-          list-style-type: none;
-          font-family: "Open Sans", sans-serif;
-        }
-
-        .mainpage {
-          background-image: url(main.jpg);
-          min-height: 100vh;
-        }
-        header {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          background-color: #80a3db;
-        }
-
-        .logo {
-          align-items: center;
-          font-size: 15.7px;
-        }
-
-        a {
-          color: white;
-        }
-
-        header > nav {
-          display: flex;
-        }
-
-        header > nav > li {
-          padding-top: 15.5px;
-          font-size: 13px;
-        }
-
-        .mainpage-content-area {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-          color: white;
-        }
-
-        .mainpage-content-area > h1 {
-          font-size: 29px;
-          text-align: center;
-          margin-bottom: 20px;
-        }
-
-        .mainpage-content-area > h3 {
-          font-size: 13.5px;
-        }
-
-        .buttton {
-          border-radius: 4px;
-          text-transform: uppercase;
-          font-weight: bold;
-          text-align: center;
-          background-color: #3f51b5;
-          padding: 10px 40px;
-        }
-
-        /* Some Of Our Destinations*/
-
-        .SomeOfOurDestinations {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          color: black;
-        }
-        .SomeOfOurDestinations > h1 {
-          text-align: center;
-          font-size: 25px;
-        }
-        .SomeOfOurDestinations > p {
-          text-align: center;
-          max-width: 775px;
-          padding-bottom: 20px;
-        }
-
-        hr {
-          width: 220px;
-          height: 3px;
-          background-color: #3f51b5;
-          border: 0;
-        }
-
-        .grid {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-
-        .small {
-          flex-basis: 100%;
-        }
-
-        .large {
-          flex-basis: 100%;
-        }
-
-        /* Tour Packages */
-        .TourPackages {
-          background-color: #f5f5f5;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          color: black;
-        }
-
-        .TourPackages > hr {
-          margin-top: 20px;
-        }
-
-        .TourPackages > p {
-          line-height: 2;
-          max-width: 775px;
-          text-align: center;
-        }
-        .TourPackages > h3 {
-          font-size: 22.5px;
-          margin-bottom: 20px;
-        }
-        .TourPackages > ul {
-          display: grid;
-          grid-template-columns: repeat(1, 1fr);
-          grid-template-rows: repeat(4, 1fr);
-          gap: 20px;
-        }
-
-        .TourPackages > ul > li > h4 {
-          text-align: center;
-          font-size: 20px;
-        }
-        .TourPackages > ul > li > p {
-          max-width: 775px;
-          line-height: 2;
-          text-align: center;
-          font-size: 15px;
-          margin: 60px;
-        }
-
-        .guided-trips {
-          padding-left: 110px;
-        }
-
-        .photo-trips {
-          padding-left: 89px;
-        }
-
-        .biking-trips {
-          padding-left: 85px;
-        }
-
-        .racing-trips {
-          padding-left: px;
-          position: relative;
-          right: 105.6px;
-        }
-
-        /* Testimonials From Our Adventurers */
-        .TestimonialsFromOurAdventurers {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 100px 80px;
-        }
-
-        .TestimonialsFromOurAdventurers > h3 {
-          margin-bottom: 30px;
-          text-align: center;
-          font-size: 1.4rem;
-        }
-
-        .TestimonialsFromOurAdventurers.quote {
-          font-size: 22px;
-          font-weight: 300;
-          line-height: 1.5;
-        }
-
-        .TestimonialsFromOurAdventurers > p {
-          line-height: 1.5;
-          margin-bottom: 30px;
-          text-align: center;
-          font-size: 1rem;
-        }
-
-        /*  Learn Mores */
-
-        .LearnMore {
-          background-color: #f5f5f5;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 100px 80px;
-        }
-        .LearnMore > h1 {
-          margin-bottom: 30px;
-          text-align: center;
-          font-size: 28px;
-        }
-        .LearnMore > p {
-          max-width: 775px;
-          line-height: 1.8;
-          margin-bottom: 20px;
-          text-align: center;
-        }
-        .LearnMore > form > input {
-          padding: 8px;
-          margin-right: 18px;
-          margin-left: 30px;
-          font-size: 18px;
-          color: #555;
-          flex: 1;
-          margin-bottom: 30px;
-        }
-
-        .LearnMore > form > a {
-          font-size: 0.88rem;
-          margin: 46px;
-          padding: 15px 40px;
-        }
-
-        /* footer */
-        .footer {
-          display: flex;
-          justify-content: space-around;
-          background-color: #607d8b;
-          padding: 20px;
-          justify-content: center;
-          font-size: 14px;
-          flex-direction: column;
-        }
-
-        .footer > p {
-          padding-left: 40px;
-          text-align: center;
-          font-size: 13px;
-        }
-        .footer > ul {
-          display: flex;
-          justify-content: center;
-          padding-right: 40px;
-          padding-top: 15px;
-        }
-
-        .footer-logo {
-          width: 30px;
-        }
+      .mainpage {
+        background-image: url(main.jpg);
+        min-height: 90vh;
       }
-    </style>
-  </head>
+      header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 35px 100px 0;
+        background-color: #80a3db;
+      }
+
+      a {
+        color: white;
+      }
+
+      header > nav {
+        display: flex;
+      }
+
+      header > nav > li {
+        margin: 0 15px;
+      }
+
+      .mainpage-content-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 150px;
+        color: white;
+      }
+      .mainpage-content-area > h1 {
+        font-size: 70px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .mainpage-content-area > h3 {
+        font-size: 40px;
+        margin-bottom: 40px;
+      }
+
+      .buttton {
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        background-color: #3f51b5;
+        padding: 30px 100px;
+      }
+
+      /* Some Of Our Destinations*/
+
+      .SomeOfOurDestinations {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 80px;
+        color: black;
+      }
+
+      hr {
+        width: 250px;
+        height: 3px;
+        background-color: #3f51b5;
+        border: 0;
+        margin-bottom: 50px;
+      }
+
+      .grid {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .SomeOfOurDestinations > ul > li {
+        height: 350px;
+        padding: 20px;
+        background-clip: content-box;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .SomeOfOurDestinations > p {
+        max-width: 775px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .small {
+        flex-basis: 50%;
+      }
+
+      .large {
+        flex-basis: 50%;
+      }
+
+      /* Tour Packages */
+      .TourPackages {
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 80px;
+        color: black;
+      }
+
+      .TourPackages > p {
+        line-height: 2;
+        max-width: 775px;
+        text-align: center;
+      }
+      .TourPackages > h3 {
+        font-size: 2rem;
+      }
+      .TourPackages > ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .TourPackages > ul > li > h4 {
+        text-align: center;
+        font-size: 30px;
+      }
+      .TourPackages > ul > li > p {
+        max-width: 775px;
+        line-height: 2;
+        text-align: center;
+      }
+
+      .guided-trips {
+        padding-left: 40%;
+      }
+
+      .photo-trips {
+        padding-left: 35%;
+      }
+
+      .biking-trips {
+        padding-left: 35%;
+      }
+
+      .racing-trips {
+        padding-left: 35%;
+      }
+
+      /* Testimonials From Our Adventurers */
+      .TestimonialsFromOurAdventurers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 80px;
+      }
+
+      .TestimonialsFromOurAdventurers > h3 {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 1.8rem;
+      }
+
+      .TestimonialsFromOurAdventurers.quote {
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 1.5;
+        margin: 40px 0 25px;
+      }
+
+      .TestimonialsFromOurAdventurers > p {
+        max-width: 775px;
+        line-height: 2;
+        padding: 0 20px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      /*  Learn Mores */
+      .LearnMore {
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 80px;
+      }
+      .LearnMore > h1 {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 32px;
+      }
+      .LearnMore > p {
+        max-width: 775px;
+        line-height: 2;
+        padding: 0 20px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .LearnMore > form > input {
+        padding: 15px;
+        margin-right: 30px;
+        font-size: 18px;
+        color: #555;
+        flex: 1;
+        margin-bottom: 20px;
+      }
+
+      /* footer */
+      .footer {
+        display: flex;
+        justify-content: space-around;
+        background-color: #607d8b;
+        padding: 20px;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      .footer > p {
+        padding-right: 50px;
+        text-align: center;
+      }
+      .footer > ul {
+        display: flex;
+        justify-content: center;
+      }
+      .footer-logo {
+        width: 30px;
+      }
+
+      .footer > ul > li {
+        padding-right: 30px;
+      }
+    }
+  </style>
   <body>
     <section class="mainpage">
       <header>
